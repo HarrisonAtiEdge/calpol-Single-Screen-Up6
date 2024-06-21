@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../images/Calpol 2 Sonic Rush Game Logo-01.webp" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<title>Game 2 Round 4</title>
+<link rel="stylesheet" href="../game1/styles.css">
+<script src="../worker.js"></script>
+<style>
+     #popupContainer {
+        width: 100%;
+        display: flex;
+     justify-content: center;
+        /* display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center; */
+        /* position: relative; */
+        /* top: 550px;
+        left: -100%;
+        bottom: 0;
+        right: 0; */
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        /* z-index: 9999; */
+        transition: left 1s ease-in-out; /* Transition to move from left to right */
+    }
+
+    #gifPopup {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        /* left: -9%;  */
+        background-color:transparent;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    #showPopupBtn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        /* z-index: 1000; */
+    }
+     #popupContainer2 {
+        width: 100%;
+    display: flex;
+    justify-content: center;
+        /* position: relative; */
+        /* top: 550px;
+        left: -100%;  */
+        /* bottom: 0;
+        right: 0; */
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        /* z-index: 9999; */
+        transition: left 1s ease-in-out; /* Transition to move from left to right */
+    }
+
+    #gifPopup2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        /* left: -9%;  */
+        background-color:transparent;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    #showPopupBtn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        /* z-index: 1000; */
+    }
+
+
+   .buttonsoundalign{
+    justify-content: space-between;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0%;
+    z-index: 1000;
+}
+.soundright {
+    padding: 20px;
+    left: 20px;
+    cursor: pointer;
+    /* rotate: 90deg; */
+    margin-right: -3px;
+    background-color: rgb(82, 0, 0);
+    border: none;
+    border-radius: 10px 0 0 10px ;
+/* box-shadow: 4px 6px 4px  red; */
+color: white;
+
+}
+.soundleft {
+    padding: 20px ;
+   
+    left: 20px;
+    rotate: 90deg;
+    margin-left: -7px;
+    background-color: rgb(82, 0, 0);
+    border: none;
+    border-radius: 10px 10px 0 0;
+    /* box-shadow: 4px 6px 4px  red; */
+    color: white;
+    /* padding-bottom: 5px; */
+    cursor: pointer;
+    
+}
+</style>
+</head>
+<body class="bg">
+
+    <div class="buttonsoundalign">
+       
+        <button onclick="back()" class="soundleft" >back</button>
+    
+        <button id="volumeup" class="soundright" onclick="backSound()">  <i class="fas fa-volume-up" ></i></button>
+        <button id="volumedown" class="soundright" onclick="backSound2()">  <i class="fas fa-volume-xmark" ></i></button>
+    </div>
+
+    
+<div id="game-container">
+
+    <div  class="game2-calpol ">
+        <!-- <h2>Game2 Rounds</h2> -->
+        <img src="../images/Calpol GSK Logo.webp">
+    </div>
+<!-- <img id="calpolLogo" src="../images/Calpol-Logo.webp" alt=""> -->
+
+    <div class="teambg">
+        <img src="../images/tablesBg.webp">
+        <div id="teams">
+            <button class="team-btn" data-team="1">Table 1</button>
+            <button class="team-btn" data-team="2">Table 2</button>
+            <button class="team-btn" data-team="3">Table 3</button>
+            <button class="team-btn" data-team="4">Table 4</button>
+            <button class="team-btn" data-team="5">Table 5</button>
+            <button class="team-btn" data-team="6">Table 6</button>
+            <button class="team-btn" data-team="7">Table 7</button>
+            <br>
+            <button class="team-btn" data-team="8">Table 8</button>
+            <button class="team-btn" data-team="9">Table 9</button>
+            <button class="team-btn" data-team="10">Table 10</button>
+            <button class="team-btn" data-team="11">Table 11</button>
+            <button class="team-btn" data-team="12">Table 12</button>
+            <button class="team-btn" data-team="13">Table 13</button>
+            <button class="team-btn" data-team="14">Table 14</button>
+            <br>
+            <button class="team-btn" data-team="15">Table 15</button>
+            <button class="team-btn" data-team="16">Table 16</button>
+            <button class="team-btn" data-team="17">Table 17</button>
+            <button class="team-btn" data-team="18">Table 18</button>
+            <button class="team-btn" data-team="19">Table 19</button>
+            <button class="team-btn" data-team="20">Table 20</button>
+            <button class="team-btn" data-team="21">Table 21</button>
+        </div>
+    
+    <div id="timer-container">
+        
+        
+        
+        <div id="outer-circle">           
+            <div id="timer">0:00</div>
+            <div id="newtimer"  style='display: none;'>0:00</div>
+        </div> 
+        
+        <button id="start-timer-control"   class="start-timer reset-timer btn bounce2">Start Timer</button>
+        <button id="reset-timer-control"   class="start-timer reset-timer btn bounce2">Reset Timer</button>
+        <!-- <button id="newBtn" class="btn bounce2">Start Timer</button> -->
+    </div>
+</div>
+    
+    
+      
+    <div class="forQuestionBg" >
+        <img src="../images/qBg.webp">
+    <div id="question-container">
+        <div id="question"></div>
+        <!-- <div class="optionalign">
+             <button id="options-btn" class="bounce" >Show Options</button>
+        </div> -->
+        <div id="options" style="display: none;">
+           <button class="option">Option 1</button>
+            <button class="option">Option 2</button>
+            <button class="option">Option 3</button>
+            <button class="option">Option 4</button>
+        </div>
+        <!-- Result Button -->
+        
+            <button id="result"  class="bounce"  onclick="resultscreen()">Go to Results</button>
+       
+    </div>
+    
+    </div>
+<div class="roundpadding">
+<div class="roundbtnalign">
+   
+        <button id="reset-score" class="bounce2" style="display: none;" >Reset Score</button>
+        <button id="reset-score" class="btn bounce" onclick="MainScreen()">Main Menu</button>
+        <button id="next-question" class="btn bounce">Next Question</button>
+    </div>
+</div>
+
+     <!-- Add the Reset Score button -->
+      <!-- animation of sonic -->
+      <div id="popupContainer" style="display: none;">
+        <div id="gifPopup">
+            
+        <img id="gifImage" src="../images/Wrong.gif" alt="GIF Image">
+        </div>
+    </div>
+
+    <div id="popupContainer2" style="display: none;">
+        <div id="gifPopup2">
+            
+        <img id="gifImage2" src="../images/Correct.gif" alt="GIF Image">
+        </div>
+    </div>
+     
+   
+
+</div>
+
+<footer>
+    <p style="font-size: 12px; color: white;"></p>
+</footer>
+<script src="round4script.js"></script>
+
+<script>
+    
+    function resultscreen()
+    {
+        window.location.href='game2result.html';
+    }
+
+    function MainScreen(){
+        window.location.href='../index.html';
+    }
+    function back() {
+        window.location.href='buzzerRound4.html';
+    }
+
+</script>
+
+<script src="../sound.js"></script>
+</body>
+</html>

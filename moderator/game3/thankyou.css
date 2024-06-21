@@ -1,0 +1,285 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS';
+}
+
+.background1 {
+    margin: 0;
+            padding: 0;
+            /* font-family: Arial, sans-serif; */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('../images/home-back.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+    
+}
+.main-div {
+    width: 350px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    /* border: solid 2px black; */
+    overflow: hidden; /* Ensures the pendulum motion doesn't extend beyond the main-div */
+    position: relative;
+    animation: pendulum 6s infinite alternate;
+    transform-origin: top; /* Rotate from top */
+}
+@keyframes pendulum {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+.game_div {
+    width: 350px;
+    height: 350px;
+    border-radius: 100px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.game_image {
+    position: absolute;
+    top: 0;
+    left: 48.5%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ropecss{ 
+   z-index: 9999; 
+   margin-left: 10px;
+   margin-top: -990px;
+   position: absolute; 
+}
+.ropecss img{
+   height: 300px;
+   width: 30px;
+   
+}
+.ropecss1{ 
+   /* z-index: 9999;   */
+   position: absolute;
+   margin-right: 707px;
+   margin-top: -1017px;
+}
+.ropecss1 img{
+    height: 300px;
+   width: 30px;
+}
+.ropecss2{ 
+   z-index: 9999;  
+   position: absolute;
+   margin-left: 700px;
+   margin-top: -990px;
+}
+.ropecss2 img{
+   height: 300px;
+   width: 30px;
+}
+.homeback{
+z-index: -100;
+position: absolute;
+}
+.homeback img{
+    width: 700px;
+    height: 300px;
+    padding-top: 200px;
+   
+}
+/* .rushlogo{
+    z-index: 1000;
+    position: absolute;
+}
+.rushlogo img{
+   width: 400px;
+   margin-top: 700px;
+} */
+
+
+
+/* game rule1 screen start */
+
+.game1rule{
+  /* padding-top: 10rem; */
+ }
+.game1rule img{
+   width: 70rem;
+   height: 41rem;
+}
+.sonicred {
+  padding-left: 58rem;
+  position: absolute;
+  padding-top: 32rem;
+}
+.sonicred img{
+    width: 10rem;
+    position: absolute;
+}
+.sonicorg {
+    padding-right: 78rem;
+    position: absolute;
+    padding-top: 32rem;
+}
+  .sonicorg img{
+      width: 10rem;
+      position: absolute;
+  }
+  .cloudwebp {
+    padding-bottom: 20rem;
+    position: absolute;
+    padding-left: 43rem;
+}
+  .cloudwebp img{
+      width: 13rem;
+      position: absolute;
+  }
+  .gameicon1route{
+    position: absolute;
+    padding-right: 49rem;
+    padding-bottom: 10rem;
+  }
+
+
+
+  .gameicon1al-div {
+    width: 200px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    /* border: solid 2px black; */
+    overflow: hidden; /* Ensures the pendulum motion doesn't extend beyond the main-div */
+    position: relative;
+    animation: pendulum 6s infinite alternate;
+    transform-origin: top; /* Rotate from top */
+}
+@keyframes pendulum {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+.icon1_div {
+    width: 180px;
+    height: 180px;
+    position: relative;
+}
+.game1_image {
+    position: absolute;
+    top: 0;
+    left: 48.5%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.roperulecss{
+    margin-top: -140px;
+    position: absolute;
+    z-index: 1000;
+    margin-left: 4.5rem;
+    }
+.roperulecss img{
+width: 1rem;
+height: 10rem;
+position: absolute;
+}
+
+.bounceImg {
+
+    animation: jelly-bounce 4s infinite;
+}
+
+@keyframes jelly-bounce {
+    0%, 100% { transform: scale(1,1); }
+    25% { transform: scale(0.9,1.1); }
+    50% { transform: scale(1.1,0.9); }
+    75% { transform: scale(0.9,1.1); }
+}
+
+/* game rule1 screen end */
+
+/* startbutton */
+
+.startgame {
+    position: absolute;
+    padding-top: 50rem;
+}
+.startgame button{
+    /* position: absolute;   */
+    font-family: 'Comic Sans MS';
+    width: 160px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(82, 0, 0);
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 200;
+    font: bold;
+    cursor: pointer;
+}
+
+.result1webp {
+    padding-bottom: 46rem;
+    position: absolute;
+    padding-left: -2rem;
+    rotate: 20deg;
+}
+  .result1webp img{
+      width: 15rem;
+      position: absolute;
+  }
+
+
+
+  .resulticon1al-div {
+    width: 200px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    /* border: solid 2px black; */
+    overflow: hidden; /* Ensures the pendulum motion doesn't extend beyond the main-div */
+    position: relative;
+    animation: pendulum 6s infinite alternate;
+    transform-origin: top; /* Rotate from top */
+}
+@keyframes pendulum {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+  .iconresult_div {
+    width: 180px;
+    height: 180px;
+    position: relative;
+}
+.gameresult_image {
+    position: absolute;
+    top: 0;
+    left: 48.5%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.resultalign{
+    position: absolute;
+    padding-right: 23rem;
+    padding-bottom: 8rem;
+}
+
+
+.game2-calpol{
+    z-index: 9999;
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    /* color: rgb(88, 5, 5); */
+}
+.game2-calpol img{
+    width: 250px;
+}

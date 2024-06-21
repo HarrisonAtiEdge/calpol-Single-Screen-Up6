@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../images/Calpol 2 Sonic Rush Game Logo-01.webp" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<title>Games</title>
+<!-- <link rel="stylesheet" href="styles.css"> -->
+<link rel="stylesheet" href="thankyou.css">
+<link rel="stylesheet" href="stylecloud.css">
+<script src="../worker.js"></script>
+<style>
+    .buttonsoundalign{
+    justify-content: space-between;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0%;
+    z-index: 1000;
+}
+.soundright {
+    padding: 20px;
+    left: 20px;
+    cursor: pointer;
+    /* rotate: 90deg; */
+    margin-right: -3px;
+    background-color: rgb(82, 0, 0);
+    border: none;
+    border-radius: 10px 0 0 10px ;
+/* box-shadow: 4px 6px 4px  red; */
+color: white;
+
+}
+.soundleft {
+    padding: 20px ;
+   
+    left: 20px;
+    rotate: 90deg;
+    margin-left: -7px;
+    background-color: rgb(82, 0, 0);
+    border: none;
+    border-radius: 10px 10px 0 0;
+    /* box-shadow: 4px 6px 4px  red; */
+    color: white;
+    /* padding-bottom: 5px; */
+    cursor: pointer;
+    
+}
+</style>
+
+</head>
+<body class="background1">
+
+    <div class="buttonsoundalign">
+       
+        <button onclick="back()" class="soundleft" >back</button>
+    
+        <button id="volumeup" class="soundright" onclick="backSound()">  <i class="fas fa-volume-up" ></i></button>
+        <button id="volumedown" class="soundright" onclick="backSound2()">  <i class="fas fa-volume-xmark" ></i></button>
+    </div>
+    <div  class="game2-calpol ">
+        <!-- <h2>Game2 Rounds</h2> -->
+        <img src="../images/Calpol GSK Logo.webp">
+    </div>
+
+
+    <div id="background-wrap">
+        <div class="x1">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x2">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x3">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x4" style="margin-top: -100px;">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x5" style="margin-top: -300px;">
+            <div class="cloud"></div>
+        </div>
+        <div class="x1" style="margin-top: -100px; margin-right: 3000px">
+            <div class="cloud"></div>
+        </div>
+       
+    </div>
+
+    <div class="game1rule">
+      <img src="../images/thankyou-01.webp">
+    </div>
+    <div class="sonicred">
+       <img src="../images/Sonic Red.webp">
+    </div>
+    <div class="sonicorg">
+        <img src="../images/Sonic Or.webp">
+     </div>
+     <!-- <div class="cloudwebp">
+         <img src="../images/CLOUD-01.webp" class="bounceImg">
+     </div> -->
+     <!-- <div class="gameicon1route">
+
+    <div class="roperulecss">
+        <img src="../images/newrope.webp" alt="Buzzer Blitz" >
+    </div>
+   
+    <div class="gameicon1al-div">
+        <div class="icon1_div">
+            <img src="../images/Calpol 2 Sonic Rush Game Logo-01.webp" alt="Mind Spin Trivia" class="game1_image">
+        </div>
+        
+    </div>
+</div> -->
+<div class="startgame ">
+    <button class="bounceImg" onclick="navigateTo()">Main Menu</button>
+</div>
+
+<script>
+    function navigateTo() {
+        window.location.href = '../index.html';
+    }
+
+    function back() {
+        window.location.href='game3result.html';
+    }
+</script>
+<!-- <div class="rushlogo">
+    <img src="/images/Sonic Rush Logo.webp" >
+</div> -->
+<script src="../sound.js"></script>
+</body>
+</html>

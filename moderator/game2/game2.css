@@ -1,0 +1,301 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS';
+}
+.bg{
+background-image: url(../images/rule1-01.webp);
+width: 100%;
+background-size:cover ;
+overflow: hidden;
+}
+
+#calpolLogo{
+    position: absolute;
+    top: 45px;
+    left:  45px;
+    width: 150px;
+}
+
+
+#game-container {
+    text-align: center;
+}
+
+#teams {
+    position: absolute;
+    margin-bottom: 20px;
+    top: 35px;
+    left: 225px;
+    background-image: url(../images/tablesBg.webp);
+    background-size:cover ;
+    padding: 50px ;
+
+}
+
+.forQuestionBg{
+    /* background-image: url(qBg.webp);
+    background-size: cover; */
+    /* padding: 191px 183px; */
+    color: white;
+    position: absolute;
+    top: 257px;
+    left: 227px;
+
+}
+.forQuestionBg img{
+    width: 900px;
+    height: 400px;
+    background-color: transparent;;
+    
+}
+
+.team-btn {
+    font-family: 'Comic Sans MS';
+    width: 120px;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    color: rgb(187, 0, 0);
+    text-transform: uppercase;
+    font-weight: 200;
+    font: bold;
+    cursor: pointer;
+}
+
+#question-container {
+    margin-bottom: 20px;
+}
+
+#question {
+    font-family: 'Comic Sans MS';
+    font-size: 20px;
+    /* margin-bottom: 20px; */
+    margin-top: -363px;
+    width: 600px;
+    height: 90px;
+    padding-left: 10rem;
+
+}
+#next-question{
+    position: absolute;
+    bottom: 45px;
+    right: 582px;
+    font-family: 'Comic Sans MS';
+    width: 197px;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(82, 0, 0);
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 200;
+    font: bold;
+    cursor: pointer;
+    right: 300px;
+}
+
+.option img{
+    width: 50px;
+    height: auto;
+}
+
+.btn{font-family: 'Comic Sans MS';
+    width: 120px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(82, 0, 0);
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 200;
+    font: bold;
+    cursor: pointer;}
+#options-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#question-container #options{
+    display: grid;
+    /* justify-content: space-evenly; */
+  grid-template-columns: auto auto  ;
+    padding-top: 2rem;
+    
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.option {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: rgb(74, 0, 0);
+    font-family: 'Comic Sans MS';
+    border-radius: 70px;
+    border: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+#result{
+    position: absolute;
+    top: 439px;
+    left: 609px;
+    font-size: large;
+}
+#timer-container {
+    position: absolute;
+    top: 89px;
+    right: 65px;
+}
+#options {
+    display: none;
+    /* width: 30rem; */
+    height: .5rem;
+}
+#start-timer {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#timer {
+    font-size: 24px;
+}
+.selected {
+    background-color: #F07521;
+    color: black;
+}
+#reset-score{
+    position: absolute;
+    /* margin-top: 300px; */
+    bottom: 45px;
+    font-family: 'Comic Sans MS';
+    width: 197px;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(82, 0, 0);
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 200;
+    font: bold;
+    cursor: pointer;
+    left: 300px;
+}
+
+
+.bounce {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: rgb(74, 0, 0);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Comic Sans MS';
+    animation: jelly-bounce 4s infinite;
+}
+
+@keyframes jelly-bounce {
+    0%, 100% { transform: scale(1,1); }
+    25% { transform: scale(0.9,1.1); }
+    50% { transform: scale(1.1,0.9); }
+    75% { transform: scale(0.9,1.1); }
+}
+
+
+
+#game-timer {
+    text-align: center;
+position: relative;
+width: 150px;
+height: 150px;  
+}
+
+.bounce2{
+    animation: jelly-bounce 4s infinite;
+}
+
+@keyframes jelly-bounce {
+    0%, 100% { transform: scale(1,1); }
+    25% { transform: scale(0.9,1.1); }
+    50% { transform: scale(1.1,0.9); }
+    75% { transform: scale(0.9,1.1); }
+}
+
+#outer-circle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: -39px;
+    border: 5px solid #ccc; /* Initial color of the outer circle border */
+    box-sizing: border-box;
+    animation: colorChange 10s infinite; /* Animation for color change every 10 seconds */
+    transition: border-color 0.5s ease; /* Transition effect for border-color */
+}
+
+#timer, #newtimer {
+    font-size: 30px;
+    color: #520000; /* Initial color of the timer text */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the timer is above the outer circle */
+}
+
+.highlight {
+    border-color: rgb(150, 0, 0) !important; /* Change this to your desired highlight color */
+}
+
+@keyframes colorChange {
+    0% {
+        border-color: #4d0000;
+    }
+
+    10%{
+        border-color: rgb(154, 0, 0);
+    }
+
+    33% {
+        border-color: rgb(255, 128, 0);
+    }
+    44%{
+        border-color: rgb(170, 0, 0);
+    }
+
+    55% {
+        border-color:rgb(255, 128, 0);
+    }
+    77%{
+        border-color: rgb(144, 0, 0);
+    }
+
+    100% {
+        border-color:rgb(255, 128, 0);
+    }
+}
+
+
+footer{
+    position: absolute;
+    bottom: 7px;
+    left: 51px;
+}

@@ -1,0 +1,141 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 82.5vh;
+}
+.roundbg{
+    background-image: url(../images/home-backnew-01.webp); 
+    background-size: cover;
+    background-position: center; /* Center the background image */
+    /* height: 100vh; */
+}
+.roundmain-div {
+    width: 350px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    /* border: solid 2px black; */
+    overflow: hidden; /* Ensures the pendulum motion doesn't extend beyond the main-div */
+    position: relative;
+    animation: pendulum 6s infinite alternate;
+    transform-origin: top; /* Rotate from top */
+}
+@keyframes pendulum {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+.roundgame_div {
+    width: 260px;
+    height: 260px;
+    border-radius: 100px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.roundgame_image {
+    position: absolute;
+    top: 0;
+    left: 48.5%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.roundropecss{ 
+   z-index: 9999; 
+   margin-right: 400px;
+   margin-top: -1020px;
+   position: absolute; 
+}
+.roundropecss img{
+   height: 300px;
+   width: 30px;
+   
+}
+.roundropecss1{ 
+   /* z-index: 9999;   */
+   position: absolute;
+   margin-right: 1100px;
+   margin-top: -1017px;
+}
+.roundropecss1 img{
+    height: 300px;
+   width: 30px;
+}
+.roundropecss2{ 
+   z-index: 9999;  
+   position: absolute;
+   margin-left: 280px;
+   margin-top: -1016px;
+}
+.roundropecss2 img{
+   height: 300px;
+   width: 30px;
+}
+.roundropecss3{ 
+   z-index: 9999;  
+   position: absolute;
+   margin-left: 980px;
+   margin-top: -1016px;
+}
+.roundropecss3 img{
+   height: 300px;
+   width: 30px;
+}
+.homeback{
+z-index: -100;
+position: absolute;
+}
+.homeback img{
+    width: 700px;
+    height: 300px;
+    padding-top: 200px;
+   
+}
+/* .rushlogo{
+    z-index: 1000;
+    position: absolute;
+}
+.rushlogo img{
+   width: 400px;
+   margin-top: 700px;
+} */
+
+
+
+.bounceImg {
+
+    animation: jelly-bounce 4s infinite;
+}
+
+@keyframes jelly-bounce {
+    0%, 100% { transform: scale(1,1); }
+    25% { transform: scale(0.9,1.1); }
+    50% { transform: scale(1.1,0.9); }
+    75% { transform: scale(0.9,1.1); }
+}
+
+.game2-heading{
+    z-index: 9999;
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    color: rgb(88, 5, 5);
+}
+.game2-heading img{
+    width: 200px;
+}
+
+
+.game2-calpol{
+    z-index: 9999;
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    /* color: rgb(88, 5, 5); */
+}
+.game2-calpol img{
+    width: 250px;
+}
