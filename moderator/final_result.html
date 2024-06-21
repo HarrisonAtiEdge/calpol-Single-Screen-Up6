@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/Calpol 2 Sonic Rush Game Logo-01.webp" type="image/x-icon">
+    <link rel="stylesheet" href="./game1/indexstyle.css">
+    <link rel="stylesheet" href="./game1/cloudstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Game1 Result</title>
+    <script src="../worker.js"></script>
+    <style>
+        .td-Margin {
+    margin-bottom: 5px;
+}
+
+#show_result {
+    position: absolute;
+    z-index: 1000;
+}
+
+#options-btn{
+
+    font-family: 'Comic Sans MS';
+	background-color: white;
+    border-radius: 15px;
+    color: #6d0000;
+    padding: 7px 10px;
+	font-size: .9em;
+	font-weight: 900;
+    width: 140px;
+	text-align: center;
+	text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonsoundalign{
+    justify-content: space-between;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0%;
+    z-index: 1000;
+}
+.soundright {
+    padding: 20px;
+    left: 20px;
+    cursor: pointer;
+    /* rotate: 90deg; */
+    margin-right: -3px;
+    background-color: rgb(82, 0, 0);
+    border: none;
+    border-radius: 10px 0 0 10px ;
+/* box-shadow: 4px 6px 4px  red; */
+color: white;
+
+}
+.soundleft {
+    padding: 20px ;
+   
+    left: 20px;
+    rotate: 90deg;
+    margin-left: -7px;
+    background-color: rgb(82, 0, 0);
+    border: none;
+    border-radius: 10px 10px 0 0;
+    /* box-shadow: 4px 6px 4px  red; */
+    color: white;
+    /* padding-bottom: 5px; */
+    cursor: pointer;
+    
+    
+}
+    </style>
+</head>
+<body class="background1">
+
+    <div class="buttonsoundalign">
+       
+        <button onclick="back()" class="soundleft" >back</button>
+    
+        <button id="volumeup" class="soundright" onclick="backSound()">  <i class="fas fa-volume-up" ></i></button>
+        <button id="volumedown" class="soundright" onclick="backSound2()">  <i class="fas fa-volume-xmark" ></i></button>
+    </div>
+
+
+    <div  class="game2-calpol ">
+        <!-- <h2>Game2 Rounds</h2> -->
+        <img src="./images/Calpol GSK Logo.webp">
+    </div>
+    <div id="background-wrap">
+        <div class="x1">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x2">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x3">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x4" style="margin-top: -100px;">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x5" style="margin-top: -300px;">
+            <div class="cloud"></div>
+        </div>
+        <div class="x1" style="margin-top: -100px; margin-right: 3000px">
+            <div class="cloud"></div>
+        </div>
+       
+    </div>
+
+
+
+    
+    <div class="resultbox">
+        <img src="./images/resultpage-01.webp">
+    </div>
+    <div class="result1webp">
+        <img src="./images/FINALRESULT-01.webp" class="bounceImg">
+    </div>
+    <div class="resultalign">
+    <!-- <div class="resulticon1al-div">
+        <div class="iconresult_div">
+            <img src="./images/Calpol 2 Sonic Rush Game Logo-01.webp" alt="Mind Spin Trivia" class="gameresult_image">
+        </div>
+        
+    </div> -->
+</div>
+    <div id="scoreboard">
+    <table id="scoreTable">
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="scoreTableBody">
+            <!-- Score data will be dynamically inserted here -->
+        </tbody>
+    </table>
+</div>
+
+    <div class="mainbutton">
+        <button id="mainMenuBtn" onclick="reset_score()" class="bounce2">Reset Score</button> 
+        <button id="mainMenuBtn" onclick="mainscreen()">Main Menu</button>
+    </div>
+
+    <div id="show_result">
+        <button id="options-btn" class="bounce"  onclick="ShowResult()">See Results</button>
+    </div>
+
+    <script>
+           var show_result = document.getElementById('show_result');
+        var scoreboard = document.getElementById('scoreboard');
+        scoreboard.style.display = "none";
+
+
+    // Function to display scores in the table
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to display scores in the table
+        function displayScores() {
+            const scoreTableBody = document.getElementById('scoreTableBody');
+
+            // Extract team names and scores into an array of objects for Game 1
+            const scoresArray = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const teamKey = localStorage.key(i);
+                // Check if the team is for Game 1
+                if (teamKey.startsWith('Table')) {
+                    const teamScore = parseInt(localStorage.getItem(teamKey)); // Convert score to integer
+                    scoresArray.push({ teamKey, teamScore });
+                }
+            }
+
+            // Sort the array in descending order by points
+            scoresArray.sort((a, b) => b.teamScore - a.teamScore);
+
+            // Clear existing table rows
+            scoreTableBody.innerHTML = '';
+
+            // Populate the table with the sorted data
+            const top10Scores = scoresArray.slice(0, 10); // Select top 10 scores
+            top10Scores.forEach(({ teamKey, teamScore }) => {
+                const newRow = document.createElement('tr');
+                newRow.style.marginBottom = '10px'; // Set margin-bottom to 10px, adjust as needed
+                newRow.innerHTML = `
+                    <td>${teamKey}</td>
+                    <td>${teamScore}</td>
+                `;
+                scoreTableBody.appendChild(newRow);
+            });
+        }
+
+        // Call the displayScores function to initially populate the table
+        displayScores();
+    });
+
+
+
+function mainscreen() {
+    window.location.href = './index.html';
+}
+
+function ShowResult() {
+    scoreboard.style.display = "block";
+    show_result.style.display="none";
+
+    const resultAudio = new Audio('./sounds/Applause.mp3');
+    resultAudio.load();
+    resultAudio.play();
+
+      //*****************************confetti********************************************
+    function twoSecDelay() {
+  
+  const duration = 60 * 60 * 1000,
+  animationEnd = Date.now() + duration,
+  defaults = { startVelocity: 30, spread: 360, ticks: 20, zIndex: 0 };
+  
+  function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+  }
+  
+  const interval = setInterval(function () {
+  const timeLeft = animationEnd - Date.now();
+  
+  if (timeLeft <= 0) {
+  return clearInterval(interval);
+  }
+  
+  const particleCount = 20 * (timeLeft / duration);
+  
+  // since particles fall down, start a bit higher than random
+  confetti(
+  Object.assign({}, defaults, {
+  particleCount,
+  origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+  })
+  );
+  confetti(
+  Object.assign({}, defaults, {
+  particleCount,
+  origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+  })
+  );
+  }, 250);
+  
+  
+  
+  }
+
+  twoSecDelay();
+
+  //*****************************confetti********************************************
+}
+
+function back() {
+        window.location.href='index.html';
+    }
+
+
+   
+// Event listener for the Reset Score button
+
+    function reset_score(){
+        // Define the keys you want to remove
+        const keysToRemove = ['Table 1', 'Table 2', 'Table 3', 'Table 4', 'Table 5', 'Table 6', 'Table 7', 'Table 8',
+        'Table 9', 'Table 10','Table 11', 'Table 12','Table 13', 'Table 14', 'Table 15', 'Table 16', 'Table 17', 'Table 18', 
+        'Table 19', 'Table 20','Table 21'];
+    
+        // Loop through the keys and remove them from localStorage
+        keysToRemove.forEach(key => {
+            localStorage.removeItem(key);
+        });
+    };
+
+    </script>
+    <script src="sound.js"></script>
+</body>
+</html>
